@@ -2,11 +2,14 @@
 
 namespace app\controllers;
 
-class TestController extends \yii\web\Controller
+use yii\web\Controller;
+
+class TestController extends Controller
 {
-    public function actionIndex()
+    public function actionIndex($m = 'jghadlsglks afsgjlkhds h')
     {
-        return $this->render('index');
+      $n = 'sdgdg';
+        return $this->render('index', compact('m', 'n'));
     }
 
 }
