@@ -123,8 +123,4 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
-    
-    public function actionHello($mess = 'Hello World') {
-      return $this->render('hello', compact('mess'));
-    }
 }
