@@ -26,6 +26,7 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
-config/db.php
-tests/_output/*
-tests/_support/_generated
+/runtime
+/tests
+#tests/_output/*
+#tests/_support/_generated

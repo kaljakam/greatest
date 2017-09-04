@@ -3,6 +3,7 @@
 namespace app\models\DB;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "test_question".
@@ -19,7 +20,7 @@ use Yii;
  * @property Test $test
  * @property UserTestAnswers[] $userTestAnswers
  */
-class TestQuestion extends \yii\db\ActiveRecord
+class TestQuestion extends ActiveRecord
 {
     /**
      * @inheritdoc

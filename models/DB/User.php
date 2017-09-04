@@ -3,6 +3,7 @@
 namespace app\models\DB;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "user".
@@ -18,7 +19,7 @@ use Yii;
  * @property string $login
  * @property string $password
  * @property string $auth_key
- * @property string $auth_token
+ * @property string $access_token
  * @property string $birth
  * @property string $created
  * @property string $updated
@@ -26,7 +27,7 @@ use Yii;
  * @property Group $group
  * @property UserTest[] $userTests
  */
-class User extends \yii\db\ActiveRecord
+class User extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -45,7 +46,7 @@ class User extends \yii\db\ActiveRecord
             [['session_id', 'group_id'], 'integer'],
             [['login', 'password'], 'required'],
             [['birth', 'created', 'updated'], 'safe'],
-            [['name', 'surname', 'patronymic', 'email', 'phone', 'login', 'password', 'auth_key', 'auth_token'], 'string', 'max' => 255],
+            [['name', 'surname', 'patronymic', 'email', 'phone', 'login', 'password', 'auth_key', 'access_token'], 'string', 'max' => 255],
             [['group_id'], 'exist', 'skipOnError' => true, 'targetClass' => Group::className(), 'targetAttribute' => ['group_id' => 'id']],
         ];
     }
@@ -67,7 +68,7 @@ class User extends \yii\db\ActiveRecord
             'login' => 'Login',
             'password' => 'Password',
             'auth_key' => 'Auth Key',
-            'auth_token' => 'Auth Token',
+            'access_token' => 'Auth Token',
             'birth' => 'Birth',
             'created' => 'Created',
             'updated' => 'Updated',
